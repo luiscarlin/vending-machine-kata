@@ -1,4 +1,4 @@
-package luis.carlin.vm;
+package luis.carlin.vm.states;
 
 import java.text.DecimalFormat;
 
@@ -7,10 +7,10 @@ import luis.carlin.vm.VendingMachine;
 import luis.carlin.vm.VendingMachineHelper;
 
 /**
- * This class represents the state obtained when some money has yet been added to the vending machine.
+ * Vending machine has money
  */
-public class HasMoney implements VMState {
 
+public class HasMoney implements State {
 	VendingMachine vendingMachine;
 	
 	public HasMoney(VendingMachine vendingMachine) { 

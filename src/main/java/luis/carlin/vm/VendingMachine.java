@@ -4,6 +4,8 @@ import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 
+import luis.carlin.vm.states.*;
+
 /**
  * This class represents the context of the vending machine finite state machine.
  */
@@ -20,11 +22,11 @@ public class VendingMachine {
 	} 
 	
 	// states
-	private VMState noMoney; 
-	private VMState hasMoney;
+	private State noMoney; 
+	private State hasMoney;
 	
 	// current state
-	private VMState vmState; 
+	private State vmState; 
 	
 	private double currentAmount;
 	private String display; 
@@ -78,7 +80,7 @@ public class VendingMachine {
 	 * Sets the next state
 	 * @param nextVMState next state
 	 */
-	public void setVMState(VMState nextVMState) { 
+	public void setVMState(State nextVMState) { 
 		vmState = nextVMState; 
 	}
 	
@@ -86,13 +88,13 @@ public class VendingMachine {
 	 * Returns the no money state. Needed by state classes to switch states
 	 * @return the noMoney state
 	 */
-	public VMState getNoMoneyState() { return noMoney; }
+	public State getNoMoneyState() { return noMoney; }
 
 	/**
 	 *  Returns the has money state. Needed by state classes to switch states
 	 * @return the hasMoney state
 	 */
-	public VMState getHasMoneyState() { return hasMoney; }
+	public State getHasMoneyState() { return hasMoney; }
 	
 	/**
 	 * Adds a certain amount to the current amount of money in the machine
