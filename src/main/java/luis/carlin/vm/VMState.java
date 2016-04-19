@@ -1,10 +1,8 @@
-package main;
+package luis.carlin.vm;
 
 /**
  * This interface represents the possible inputs that the user could do. 
  * The interface will be implemented by all state classes, and they will provide logic for these user inputs.
- * @author Luis
- * 
  */
 public interface VMState { 
 	

@@ -1,9 +1,7 @@
-package main;
+package luis.carlin.vm;
 
 /**
  * This class represents a product to sell from the vending machine
- * @author Luis
- *
  */
 public class Product {
 	

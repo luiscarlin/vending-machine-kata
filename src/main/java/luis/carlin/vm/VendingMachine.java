@@ -1,4 +1,4 @@
-package main;
+package luis.carlin.vm;
 
 import java.text.DecimalFormat;
 import java.util.ArrayList;
@@ -6,8 +6,6 @@ import java.util.List;
 
 /**
  * This class represents the context of the vending machine finite state machine.
- * @author Luis
- *
  */
 public class VendingMachine {
 	
@@ -80,7 +78,7 @@ public class VendingMachine {
 	 * Sets the next state
 	 * @param nextVMState next state
 	 */
-	void setVMState(VMState nextVMState) { 
+	public void setVMState(VMState nextVMState) { 
 		vmState = nextVMState; 
 	}
 	

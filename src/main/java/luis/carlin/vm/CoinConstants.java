@@ -1,9 +1,7 @@
-package main;
+package luis.carlin.vm;
 
 /**
  * useful constants for coins' measurements
- * @author Luis
- *
  */
 public class CoinConstants {
 	// weight and size of coins for reference

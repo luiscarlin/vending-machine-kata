@@ -1,20 +1,16 @@
-package test;
+package luis.carlin.vm;
 
 import java.util.List;
 
-import main.CoinConstants;
-import main.Product;
-import main.VendingMachine;
-import main.VendingMachine.Inventory;
 import static org.junit.Assert.*;
 
 import org.junit.Before;
 import org.junit.Test;
 
+import luis.carlin.vm.VendingMachine.Inventory;
+
 /**
  * Test class for the vending machine. Uses BDD style tests with snake casing.
- * @author Luis
- *
  */
 
 public class VendingMachineTest {

@@ -1,4 +1,4 @@
-package main;
+package luis.carlin.vm;
 
 public class VendingMachineHelper {
 	/**

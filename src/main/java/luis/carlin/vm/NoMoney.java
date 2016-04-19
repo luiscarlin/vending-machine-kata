@@ -1,11 +1,13 @@
-package main;
+package luis.carlin.vm;
 
 import java.text.DecimalFormat;
 
+import luis.carlin.vm.Product;
+import luis.carlin.vm.VendingMachine;
+import luis.carlin.vm.VendingMachineHelper;
+
 /**
  * This class represents the state obtained when no money has yet been added to the vending machine.
- * @author Luis
- *
  */
 
 public class NoMoney implements VMState {
