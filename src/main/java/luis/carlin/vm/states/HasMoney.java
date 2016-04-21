@@ -69,7 +69,7 @@ public class HasMoney implements State {
 					DecimalFormat df = new DecimalFormat("0.00");
 					vendingMachine.setDisplay("PRICE: " + df.format(product.getPrice()));
 				}
-			}
+			} 
 		}
 	}
 
@@ -80,7 +80,7 @@ public class HasMoney implements State {
 		vendingMachine.setCurrentAmount(0);
 		
 		vendingMachine.setDisplay("INSERT COIN");
-		
+		 
 		// change state to no money
 		vendingMachine.setVMState(vendingMachine.getNoMoneyState());
 	}

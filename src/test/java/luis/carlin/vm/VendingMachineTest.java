@@ -9,12 +9,7 @@ import org.junit.Test;
 
 import luis.carlin.vm.VendingMachine.Inventory;
 
-/**
- * Test class for the vending machine. Uses BDD style tests with snake casing.
- */
-
 public class VendingMachineTest {
-	
 	private VendingMachineTest GIVEN = this, WHEN = this, THEN = this, AND = this;
 	
 	private VendingMachine vendingMachine; 
