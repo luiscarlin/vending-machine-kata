@@ -9,13 +9,13 @@ public class VendingMachineHelper {
 	 */
 	public static double getValueOfCoin(double size, double weight) { 
 		
-		if((size == CoinConstants.NICKEL_SIZE) && (weight == CoinConstants.NICKEL_WEIGHT)) { 
+		if (size == CoinConstants.NICKEL_SIZE && weight == CoinConstants.NICKEL_WEIGHT) { 
 			return 0.05;
 		}
-		else if((size == CoinConstants.DIME_SIZE) && (weight == CoinConstants.DIME_WEIGHT)) { 
+		else if (size == CoinConstants.DIME_SIZE && weight == CoinConstants.DIME_WEIGHT) { 
 			return 0.10;
 		} 
-		else if((size == CoinConstants.QUARTER_SIZE) && (weight == CoinConstants.QUARTER_WEIGHT)) { 
+		else if (size == CoinConstants.QUARTER_SIZE && weight == CoinConstants.QUARTER_WEIGHT) { 
 			return 0.25;
 		}
 		else { 

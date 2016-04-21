@@ -88,13 +88,17 @@ public class VendingMachine {
 	 * Returns the no money state. Needed by state classes to switch states
 	 * @return the noMoney state
 	 */
-	public State getNoMoneyState() { return noMoney; }
+	public State getNoMoneyState() { 
+		return noMoney; 
+	}
 
 	/**
-	 *  Returns the has money state. Needed by state classes to switch states
+	 * Returns the has money state. Needed by state classes to switch states
 	 * @return the hasMoney state
 	 */
-	public State getHasMoneyState() { return hasMoney; }
+	public State getHasMoneyState() { 
+		return hasMoney; 
+	}
 	
 	/**
 	 * Adds a certain amount to the current amount of money in the machine
@@ -128,18 +132,25 @@ public class VendingMachine {
 		vmState.returnCoins();
 	}
 	
-	// getters and setters
-	public double getCurrentAmount() { return currentAmount; }
-	public void setCurrentAmount(double currentAmount) { this.currentAmount = currentAmount; } 
+	public double getCurrentAmount() { 
+		return currentAmount; 
+	}
 	
-	public void setDisplay(String display) { this.display = display; } 
+	public void setCurrentAmount(double currentAmount) {
+		this.currentAmount = currentAmount; 
+	} 
+	
+	public void setDisplay(String display) { 
+		this.display = display; 
+	}
+	
 	public String getDisplay() { 
 		String toReturn = display;
 		
 		if (display == "THANK YOU") { 
 			display = "INSERT COIN";
 		}
-		else if ((display.contains("PRICE")) || (display == "SOLD OUT")) { 
+		else if (display.contains("PRICE") || display == "SOLD OUT") { 
 			if (currentAmount == 0) { 
 				display = "INSERT COIN";
 			}
@@ -152,12 +163,22 @@ public class VendingMachine {
 		return toReturn; 
 	} 
 	
-	public void setNumCoinsRejected(int numCoinsRejected) { this.numCoinsRejected = numCoinsRejected; } 
-	public int getNumCoinsRejected() { return numCoinsRejected; } 
+	public void setNumCoinsRejected(int numCoinsRejected) {
+		this.numCoinsRejected = numCoinsRejected; 
+	}
 	
-	public List<Product> getInventory() { return inventory; }
+	public int getNumCoinsRejected() {
+		return numCoinsRejected; 
+	} 
+	
+	public List<Product> getInventory() { 
+		return inventory; 
+	}
 
-	public void setSoldProduct(Inventory soldProduct) { this.soldProduct = soldProduct; }
+	public void setSoldProduct(Inventory soldProduct) { 
+		this.soldProduct = soldProduct; 
+	}
+	
 	public Inventory getSoldProduct() { 
 		Inventory toReturn = soldProduct; 
 		
@@ -168,6 +189,13 @@ public class VendingMachine {
 		return toReturn; 
 	}
 	
-	public double getCoinReturn() { return coinReturn; }
-	public void setCoinReturn(double coinReturn) { this.coinReturn = coinReturn; }
+	public double getCoinReturn() { 
+		DecimalFormat df = new DecimalFormat("0.00");
+		coinReturn = Double.parseDouble(df.format(coinReturn));
+		return coinReturn; 
+	}
+	
+	public void setCoinReturn(double coinReturn) { 
+		this.coinReturn = coinReturn; 
+	}
 }

@@ -87,7 +87,7 @@ public class VendingMachineTest {
 	@Test
 	public void selecting_candy() {
 		
-		WHEN.i_select_a_product_by_pressing_a_button(VendingMachine.Inventory.CANDY.getButton());;
+		WHEN.i_select_a_product_by_pressing_a_button(VendingMachine.Inventory.CANDY.getButton());
 		THEN.the_display_shows("PRICE: 0.65"); 
 	}
 	
@@ -147,7 +147,7 @@ public class VendingMachineTest {
 		AND.i_input_the_valid_weight_and_size_for_a_coin(ValidCoin.QUARTER);
 		AND.i_input_the_valid_weight_and_size_for_a_coin(ValidCoin.QUARTER);
 		WHEN.i_select_a_product_by_pressing_a_button(VendingMachine.Inventory.CANDY.getButton());
-		THEN.the_coin_return_compartment_contains(0.10);
+		THEN.the_coin_return_compartment_contains(0.1);
 	}
 	
 	/*
@@ -209,7 +209,7 @@ public class VendingMachineTest {
 	}
 
 	private void the_coin_return_compartment_contains(double expectedChange) {
-		vendingMachine.getCoinReturn();
+		assertTrue(expectedChange == vendingMachine.getCoinReturn());
 	}
 
 	private void the_machine_dispenses_the_product(Inventory product) {
