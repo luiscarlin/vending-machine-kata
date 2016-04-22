@@ -3,10 +3,10 @@ Scratch file
 
 Messages: 
 ---------
-- INSERT COIN		- when current amount = 0
+- INSERT COIN       - when current amount = 0
 - PRICE <price>     - when people press on item and current amount < item price
 - <current amount>  - when people enter valid coins 
-- THANK YOU			- when sale has been completed
+- THANK YOU         - when sale has been completed
 - EXACT CHNAGE ONLY - when bank does not have enough coins to provide change
 
 
