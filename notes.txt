@@ -1,0 +1,128 @@
+Scratch file
+============
+
+Messages: 
+---------
+- INSERT COIN		- when current amount = 0
+- PRICE <price>     - when people press on item and current amount < item price
+- <current amount>  - when people enter valid coins 
+- THANK YOU			- when sale has been completed
+- EXACT CHNAGE ONLY - when bank does not have enough coins to provide change
+
+
+Objects/ Attributes/ Actions:
+-----------------------------
+* vending machine
+	- display to output messages/ feedback
+	- inventory with items in the machine
+	    - has quantity for each item
+			- items have type (coke/ candy/ chips)
+			- items have price
+	- bank of coins
+		- has quantity for each currency
+		- has total amount of money in machine
+		- knows if no change available
+			- coins have a weight
+			- coins have a size
+			- coins have a value
+	- return change slot
+	- balance (current amount in transaction)
+
+	- Machine(Inventory, Bank)
+	- Machine.readDisplay()
+	- Machine.selectItem(Item)
+	- Machine.insertCoin(Coin)
+	- Machine.returnCoins()
+	- Machine.addInventory(Inventory)
+	- Machine.addBank(Bank)
+
+* Inventory
+	
+* Bank
+
+* Coin
+
+* Item
+
+Stories: 
+--------
+1. ACCEPT COINS
+    - valid coins:
+    	- identify coins by size and weight
+    		- nickel (size = small, weight = light, value = 5)
+    		- dime (size = medium, weight = mid-weight, value = 10) 
+    		- quarter (size = large, weight = heavy, value = 25)
+
+    - if valid coin inserted: 
+        - add amount to current amount
+        - update display with the current amount 
+        
+    - if invalid coin inserted: 
+        - place it in the coin return (it's rejected)
+        - do not add it to the current amount
+        
+    - if no coins are inserted:
+        - if current amount = 0: 
+        	- display "INSERT COIN" 
+        - if current amount > 0:
+        	- display current amount
+
+2. SELECT PRODUCT
+    - three products: 
+        - cola ($1.00)
+        - chips ($0.50)
+        - candy ($0.65)
+
+    - if selector button pressed: 
+    	- if current amount = price for item selected: 
+    		- dispense product 
+    		- diminish the inventory for that item
+    		- display "THANK YOU"
+    		- wait for a little while
+    		- display INSERT COINS
+    		- set current amount to $0.00
+    	- if current amount < price for item selected:
+    		- display "PRICE <price-of-the-item>"
+    		- wait for a little while
+    		- if current amount = 0: 
+    			- display INSERT COIN
+    		- if current amount > 0: 
+    			- display current amount
+
+3. MAKE CHANGE
+    - if selector button pressed: 
+        - if current amount > price for item selected:
+    		- dispense product 
+    		- diminish the inventory for that item 
+    		- return change (current amount - price for item)
+    			- placed in coin return 
+    			- in 3 denominations allowed
+    		- display "THANK YOU"
+    		- wait for a little while
+    		- display INSERT COINS
+    		- set current amount to $0.00
+
+4. RETURN COINS
+	- if return coins is pressed:
+		- if current amount > 0: 
+			- return coins
+			- display "INSERT COIN"
+		- if current amount = 0:
+			- don't do anything
+
+5. SOLD OUT
+	- if item selected by customer: 
+		- if item is sold out: 
+			- display "SOLD OUT"
+			- wait
+			- if current amount > 0:
+				- display current amount 
+			- if current amount = 0:
+				- display "INSERT COIN"
+		- if item is not sold out: 
+			- if current amount >= item: 
+				- sell (see SELECT PRODUCT")
+				
+6. EXACT CHANGE ONLY
+	- if bank does not have  enough money to provide change:
+		- display: EXACT CHANGE ONLY
