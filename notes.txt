@@ -1,14 +1,17 @@
 Scratch file
+============
 
 Messages: 
+---------
 - INSERT COIN		- when current amount = 0
 - PRICE <price>     - when people press on item and current amount < item price
 - <current amount>  - when people enter valid coins 
 - THANK YOU			- when sale has been completed
+- EXACT CHNAGE ONLY - when bank does not have enough coins to provide change
 
 
 Actions: 
-
+--------
 1. ACCEPT COINS
     - valid coins:
     	- identify coins by size and weight
@@ -44,14 +47,6 @@ Actions:
     		- wait for a little while
     		- display INSERT COINS
     		- set current amount to $0.00
-    	- if current amount > price for item selected:
-    		- dispense product 
-    		- diminish the inventory for that item 
-    		- return change (current amount - price for item)
-    		- display "THANK YOU"
-    		- wait for a little while
-    		- display INSERT COINS
-    		- set current amount to $0.00
     	- if current amount < price for item selected:
     		- display "PRICE <price-of-the-item>"
     		- wait for a little while
@@ -61,7 +56,39 @@ Actions:
     			- display current amount
 
 3. MAKE CHANGE
+    - if selector button pressed: 
+        - if current amount > price for item selected:
+    		- dispense product 
+    		- diminish the inventory for that item 
+    		- return change (current amount - price for item)
+    			- placed in coin return 
+    			- in 3 denominations allowed
+    		- display "THANK YOU"
+    		- wait for a little while
+    		- display INSERT COINS
+    		- set current amount to $0.00
 
-3. maintain inventory
+4. RETURN COINS
+	- if return coins is pressed:
+		- if current amount > 0: 
+			- return coins
+			- display "INSERT COIN"
+		- if current amount = 0:
+			- don't do anything
 
-4. dispense products 
+5. SOLD OUT
+	- if item selected by customer: 
+		- if item is sold out: 
+			- display "SOLD OUT"
+			- wait
+			- if current amount > 0:
+				- display current amount 
+			- if current amount = 0:
+				- display "INSERT COIN"
+		- if item is not sold out: 
+			- if current amount >= item: 
+				- sell (see SELECT PRODUCT")
+				
+6. EXACT CHANGE ONLY
+	- if bank does not have  enough money to provide change:
+		- display: EXACT CHANGE ONLY 
