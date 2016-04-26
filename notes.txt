@@ -36,14 +36,18 @@ Objects/ Attributes/ Actions:
 	- Machine.addInventory(Inventory)
 	- Machine.addBank(Bank)
 
-* Inventory
+* Inventory: items stored in the vending machine
 	
-* Bank
+* Bank: amount of money stored in the vending machine
 
-* Coin
-
-* Item
-
+* Coin: represents the coin you insert
+	- value
+	- denomination
+	
+	- Coin.getValue()
+	- Coin.getDenomination()
+	
+* Item: represents the items the vending machine sells
 
 Stories:
 --------
