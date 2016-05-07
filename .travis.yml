@@ -1,1 +1,2 @@
-./gradlew check
+language: java
+script: ./gradlew check
